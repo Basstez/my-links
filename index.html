@@ -8,15 +8,13 @@
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             
-            /* Фоновое изображение: темный полупрозрачный фильтр + ваше фото.
-               Убедитесь, что файл называется ровно HTX_bJxWcAApO09.jpg и лежит рядом с index.html */
-            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('HTX_bJxWcAApO09.jpg');
+            /* Чистая картинка без затемняющего слоя */
+            background-image: url('HTX_bJxWcAApO09.jpg');
             
-            /* Настройки адаптивности фонового фото */
-            background-size: cover;          /* Растягивает фото на весь экран, сохраняя пропорции */
-            background-position: center;     /* Держит картинку строго по центру на любых экранах (ПК и смартфонах) */
+            background-size: cover;
+            background-position: center;
             background-repeat: no-repeat;
-            background-attachment: fixed;    /* Фиксирует фон при прокрутке */
+            background-attachment: fixed;
             
             color: #f8fafc;
             margin: 0;
@@ -32,7 +30,7 @@
             width: 100%;
             max-width: 480px;
             text-align: center;
-            /* Полупрозрачная подложка под текстом и кнопками для идеальной читаемости */
+            /* Подложка под контентом осталась, чтобы текст на фоне фото читался четко */
             background: rgba(15, 23, 42, 0.75);
             padding: 30px;
             border-radius: 20px;
