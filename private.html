@@ -80,13 +80,15 @@
             transform: translateY(-2px);
         }
         
+        /* Стили для обычной текстовой ссылки «назад» */
         .back-link {
             display: inline-block;
-            margin-top: 25px;
+            margin-top: 30px;
             color: #cbd5e1;
             text-decoration: none;
-            font-size: 0.9rem;
-            text-shadow: 0 1px 2px rgba(0,0,0,0.6);
+            font-size: 0.95rem;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.7);
+            transition: color 0.2s;
         }
         .back-link:hover {
             color: #fff;
@@ -98,15 +100,15 @@
 
     <div class="container">
         <h1>🔒 Private Content</h1>
-        <p>Exclusive VIP</p>
+        <p>Эксклюзивные материалы и обновления</p>
 
         <div class="links">
-            <!-- Ссылка на ваш OnlyFans -->
-            <a href="https://onlyfans.com/shinaryen" class="btn" target="_blank">More of me here</a>
+            <!-- Ссылка на OnlyFans (остается кнопкой) -->
+            <a href="https://onlyfans.com/ваш_аккаунт" class="btn" target="_blank">Перейти к контенту</a>
         </div>
 
-        <!-- Ссылка назад на главную -->
-         <a href="index.html" class="back-link">← To Main Page</a>
+        <!-- Ссылка назад теперь выглядит как обычный текст -->
+        <a href="index.html" class="back-link">← На главную</a>
     </div>
 
 </body>
