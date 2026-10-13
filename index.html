@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мои ссылки</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #0f172a; /* Темный фон (можно поменять) */
+            color: #f8fafc;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            width: 100%;
+            max-width: 480px;
+            text-align: center;
+        }
+        .avatar {
+            width: 96px;
+            height: 96px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 16px;
+            border: 2px solid #38bdf8;
+        }
+        h1 {
+            font-size: 1.25rem;
+            margin: 0 0 8px 0;
+        }
+        p {
+            color: #94a3b8;
+            font-size: 0.95rem;
+            margin: 0 0 32px 0;
+        }
+        .links {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+        .btn {
+            display: block;
+            background-color: #1e293b;
+            color: #f8fafc;
+            text-decoration: none;
+            padding: 14px 20px;
+            border-radius: 12px;
+            font-weight: 500;
+            transition: background 0.2s, transform 0.1s;
+            border: 1px solid #334155;
+        }
+        .btn:hover {
+            background-color: #334155;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Ваше фото или аватарка -->
+        <img src="https://via.placeholder.com/96" alt="Avatar" class="avatar">
+        
+        <h1>Имя Фамилия</h1>
+        <p>Краткое описание или слоган для вашей страницы</p>
+
+        <div class="links">
+            <a href="https://t.hamed" class="btn" target="_blank">Telegram канал</a>
+            <a href="https://instagram.com" class="btn" target="_blank">Instagram</a>
+            <a href="https://youtube.com" class="btn" target="_blank">YouTube канал</a>
+            <a href="https://example.com" class="btn" target="_blank">Мой сайт / Портфолио</a>
+        </div>
+    </div>
+
+</body>
+</html>
