@@ -8,7 +8,7 @@
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             
-            /* Чистая картинка без затемняющего слоя */
+            /* Чистая фоновая картинка */
             background-image: url('HTX_bJxWcAApO09.jpg');
             
             background-size: cover;
@@ -30,12 +30,9 @@
             width: 100%;
             max-width: 480px;
             text-align: center;
-            /* Подложка под контентом осталась, чтобы текст на фоне фото читался четко */
-            background: rgba(15, 23, 42, 0.75);
+            /* Убран фон и размытие у контейнера */
+            background: transparent;
             padding: 30px;
-            border-radius: 20px;
-            backdrop-filter: blur(8px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
         }
 
         .avatar {
@@ -49,11 +46,13 @@
         h1 {
             font-size: 1.35rem;
             margin: 0 0 8px 0;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.6);
         }
         p {
-            color: #94a3b8;
+            color: #cbd5e1;
             font-size: 0.95rem;
             margin: 0 0 28px 0;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.6);
         }
         .links {
             display: flex;
@@ -62,17 +61,19 @@
         }
         .btn {
             display: block;
-            background-color: #1e293b;
+            background-color: rgba(30, 41, 59, 0.85); /* Полупрозрачный темный фон кнопок */
             color: #f8fafc;
             text-decoration: none;
             padding: 14px 20px;
             border-radius: 12px;
             font-weight: 500;
             transition: background 0.2s, transform 0.1s;
-            border: 1px solid #334155;
+            /* Убрана рамка (border) */
+            border: none;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
         }
         .btn:hover {
-            background-color: #334155;
+            background-color: rgba(51, 65, 85, 0.95);
             transform: translateY(-2px);
         }
     </style>
