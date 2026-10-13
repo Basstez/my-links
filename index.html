@@ -2,45 +2,90 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Мои ссылки</title>
     <style>
-        body {
- 
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    background-image: url('HTX_bJxWcAApO09.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    color: #f8fafc;
-    margin: 0;
-    padding: 40px 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+        /* 1. Базовые настройки страницы */
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            /* Сплошной темный фон на случай, если фото не покроет весь экран */
+            background-color: #111;
+            overflow: hidden; /* Убираем прокрутку страницы */
         }
+
+        /* 2. Контейнер для фонового изображения */
+        .bg-image {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            
+            /* --- НАСТРОЙКИ ФОТО --- */
+            /* Путь к вашему фото (замените на своё имя файла) */
+            background-image: url('HTX_bJxWcAApO09.jpg');
+            
+            /* Самое важное: cover растягивает фото, сохраняя пропорции,
+               заполняя весь экран. center центрирует его. */
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            
+            /* Немного затемняем фото, чтобы текст был читабельным */
+            filter: brightness(0.6); 
+            
+            /* Чтобы фото было позади всего контента */
+            z-index: -1; 
+        }
+
+        /* 3. Основной контент (текст и кнопки) */
+        .main-wrapper {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            justify-content: center; /* Центрирование по горизонтали */
+            align-items: center; /* Центрирование по вертикали */
+            min-height: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+            overflow-y: auto; /* Если контента станет много, он будет прокручиваться */
+        }
+
         .container {
             width: 100%;
             max-width: 480px;
             text-align: center;
+            /* Полупрозрачная подложка под контентом для лучшей читаемости */
+            background: rgba(0, 0, 0, 0.5); 
+            padding: 30px;
+            border-radius: 20px;
+            backdrop-filter: blur(5px); /* Эффект размытия фона за контейнером (поддерживается не везде, но красиво) */
         }
+
+        /* Стили элементов (остались почти без изменений) */
         .avatar {
             width: 96px;
             height: 96px;
             border-radius: 50%;
             object-fit: cover;
             margin-bottom: 16px;
-            border: 2px solid #38bdf8;
+            border: 2px solid #fff; /* Белая обводка аватарки */
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
         }
         h1 {
-            font-size: 1.25rem;
+            font-size: 1.5rem;
             margin: 0 0 8px 0;
+            color: #fff;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
         }
         p {
-            color: #94a3b8;
-            font-size: 0.95rem;
+            color: #e2e8f0;
+            font-size: 1rem;
             margin: 0 0 32px 0;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.5);
         }
         .links {
             display: flex;
@@ -49,35 +94,43 @@
         }
         .btn {
             display: block;
-            background-color: #1e293b;
-            color: #f8fafc;
+            background-color: rgba(255, 255, 255, 0.95); /* Полупрозрачные кнопки */
+            color: #111;
             text-decoration: none;
-            padding: 14px 20px;
+            padding: 16px 20px;
             border-radius: 12px;
-            font-weight: 500;
+            font-weight: 600;
+            font-size: 1.1rem;
             transition: background 0.2s, transform 0.1s;
-            border: 1px solid #334155;
+            border: none;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
         .btn:hover {
-            background-color: #334155;
+            background-color: #fff;
             transform: translateY(-2px);
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <!-- Ваше фото или аватарка -->
-        <img src="https://via.placeholder.com/96" alt="Avatar" class="avatar">
-        
-        <h1>Имя Фамилия</h1>
-        <p>Краткое описание или слоган для вашей страницы</p>
+    <!-- Фоновое изображение (теперь растягивается на весь экран) -->
+    <div class="bg-image"></div>
 
-        <div class="links">
-            <a href="https://t.hamed" class="btn" target="_blank">Telegram канал</a>
-            <a href="https://instagram.com" class="btn" target="_blank">Instagram</a>
-            <a href="https://youtube.com" class="btn" target="_blank">YouTube канал</a>
-            <a href="https://example.com" class="btn" target="_blank">Мой сайт / Портфолио</a>
+    <!-- Контент сайта (текст и ссылки поверх фото) -->
+    <div class="main-wrapper">
+        <div class="container">
+            <!-- Ваше фото или аватарка -->
+            <img src="https://via.placeholder.com/96" alt="Avatar" class="avatar">
+            
+            <h1>Имя Фамилия</h1>
+            <p>Краткое описание или слоган для вашей страницы</p>
+
+            <div class="links">
+                <a href="https://t.hamed" class="btn" target="_blank">Telegram канал</a>
+                <a href="https://instagram.com" class="btn" target="_blank">Instagram</a>
+                <a href="https://youtube.com" class="btn" target="_blank">YouTube канал</a>
+                <a href="https://example.com" class="btn" target="_blank">Мой сайт / Портфолио</a>
+            </div>
         </div>
     </div>
 
