@@ -2,90 +2,60 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Мои ссылки</title>
     <style>
-        /* 1. Базовые настройки страницы */
-        html, body {
-            height: 100%;
-            margin: 0;
-            padding: 0;
+        body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            /* Сплошной темный фон на случай, если фото не покроет весь экран */
-            background-color: #111;
-            overflow: hidden; /* Убираем прокрутку страницы */
-        }
-
-        /* 2. Контейнер для фонового изображения */
-        .bg-image {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
             
-            /* --- НАСТРОЙКИ ФОТО --- */
-            /* Путь к вашему фото (замените на своё имя файла) */
-            background-image: url('HTX_bJxWcAApO09.jpg');
+            /* Фоновое изображение: темный полупрозрачный фильтр + ваше фото.
+               Убедитесь, что файл называется ровно HTX_bJxWcAApO09.jpg и лежит рядом с index.html */
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('HTX_bJxWcAApO09.jpg');
             
-            /* Самое важное: cover растягивает фото, сохраняя пропорции,
-               заполняя весь экран. center центрирует его. */
-            background-size: cover;
-            background-position: center center;
+            /* Настройки адаптивности фонового фото */
+            background-size: cover;          /* Растягивает фото на весь экран, сохраняя пропорции */
+            background-position: center;     /* Держит картинку строго по центру на любых экранах (ПК и смартфонах) */
             background-repeat: no-repeat;
+            background-attachment: fixed;    /* Фиксирует фон при прокрутке */
             
-            /* Немного затемняем фото, чтобы текст был читабельным */
-            filter: brightness(0.6); 
-            
-            /* Чтобы фото было позади всего контента */
-            z-index: -1; 
-        }
-
-        /* 3. Основной контент (текст и кнопки) */
-        .main-wrapper {
-            position: relative;
-            z-index: 1;
+            color: #f8fafc;
+            margin: 0;
+            padding: 40px 20px;
             display: flex;
-            justify-content: center; /* Центрирование по горизонтали */
-            align-items: center; /* Центрирование по вертикали */
-            min-height: 100%;
-            padding: 20px;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
             box-sizing: border-box;
-            overflow-y: auto; /* Если контента станет много, он будет прокручиваться */
         }
 
         .container {
             width: 100%;
             max-width: 480px;
             text-align: center;
-            /* Полупрозрачная подложка под контентом для лучшей читаемости */
-            background: rgba(0, 0, 0, 0.5); 
+            /* Полупрозрачная подложка под текстом и кнопками для идеальной читаемости */
+            background: rgba(15, 23, 42, 0.75);
             padding: 30px;
             border-radius: 20px;
-            backdrop-filter: blur(5px); /* Эффект размытия фона за контейнером (поддерживается не везде, но красиво) */
+            backdrop-filter: blur(8px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
         }
 
-        /* Стили элементов (остались почти без изменений) */
         .avatar {
             width: 96px;
             height: 96px;
             border-radius: 50%;
             object-fit: cover;
             margin-bottom: 16px;
-            border: 2px solid #fff; /* Белая обводка аватарки */
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            border: 2px solid #38bdf8;
         }
         h1 {
-            font-size: 1.5rem;
+            font-size: 1.35rem;
             margin: 0 0 8px 0;
-            color: #fff;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
         }
         p {
-            color: #e2e8f0;
-            font-size: 1rem;
-            margin: 0 0 32px 0;
-            text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+            color: #94a3b8;
+            font-size: 0.95rem;
+            margin: 0 0 28px 0;
         }
         .links {
             display: flex;
@@ -94,43 +64,35 @@
         }
         .btn {
             display: block;
-            background-color: rgba(255, 255, 255, 0.95); /* Полупрозрачные кнопки */
-            color: #111;
+            background-color: #1e293b;
+            color: #f8fafc;
             text-decoration: none;
-            padding: 16px 20px;
+            padding: 14px 20px;
             border-radius: 12px;
-            font-weight: 600;
-            font-size: 1.1rem;
+            font-weight: 500;
             transition: background 0.2s, transform 0.1s;
-            border: none;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            border: 1px solid #334155;
         }
         .btn:hover {
-            background-color: #fff;
+            background-color: #334155;
             transform: translateY(-2px);
         }
     </style>
 </head>
 <body>
 
-    <!-- Фоновое изображение (теперь растягивается на весь экран) -->
-    <div class="bg-image"></div>
+    <div class="container">
+        <!-- Ваше фото или аватарка -->
+        <img src="https://via.placeholder.com/96" alt="Avatar" class="avatar">
+        
+        <h1>Имя Фамилия</h1>
+        <p>Краткое описание или слоган для вашей страницы</p>
 
-    <!-- Контент сайта (текст и ссылки поверх фото) -->
-    <div class="main-wrapper">
-        <div class="container">
-            <!-- Ваше фото или аватарка -->
-            <img src="https://via.placeholder.com/96" alt="Avatar" class="avatar">
-            
-            <h1>Имя Фамилия</h1>
-            <p>Краткое описание или слоган для вашей страницы</p>
-
-            <div class="links">
-                <a href="https://t.hamed" class="btn" target="_blank">Telegram канал</a>
-                <a href="https://instagram.com" class="btn" target="_blank">Instagram</a>
-                <a href="https://youtube.com" class="btn" target="_blank">YouTube канал</a>
-                <a href="https://example.com" class="btn" target="_blank">Мой сайт / Портфолио</a>
-            </div>
+        <div class="links">
+            <a href="https://t.hamed" class="btn" target="_blank">Telegram канал</a>
+            <a href="https://instagram.com" class="btn" target="_blank">Instagram</a>
+            <a href="https://youtube.com" class="btn" target="_blank">YouTube канал</a>
+            <a href="https://example.com" class="btn" target="_blank">Мой сайт / Портфолио</a>
         </div>
     </div>
 
