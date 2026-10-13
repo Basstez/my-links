@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Private Access</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            
+            /* Та же фоновая картинка */
+            background-image: url('HTX_bJxWcAApO09.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            
+            color: #f8fafc;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 480px;
+            text-align: center;
+            background: transparent;
+            padding: 30px;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            margin: 0 0 10px 0;
+            color: #fff;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+        }
+
+        p {
+            color: #f1f5f9;
+            font-size: 1rem;
+            margin: 0 0 35px 0;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+        }
+
+        .links {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+            /* Полупрозрачная стеклянная кнопка */
+            background-color: rgba(255, 255, 255, 0.35); 
+            color: #111;
+            text-decoration: none;
+            padding: 16px 20px;
+            border-radius: 14px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            
+            transition: background 0.2s, transform 0.1s;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn:hover {
+            background-color: rgba(255, 255, 255, 0.5);
+            transform: translateY(-2px);
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-top: 25px;
+            color: #cbd5e1;
+            text-decoration: none;
+            font-size: 0.9rem;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.6);
+        }
+        .back-link:hover {
+            color: #fff;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>🔒 Private Content</h1>
+        <p>Exclusive VIP</p>
+
+        <div class="links">
+            <!-- Ссылка на ваш OnlyFans -->
+            <a href="https://onlyfans.com/shinaryen" class="btn" target="_blank">Перейти к контенту</a>
+        </div>
+
+        <!-- Ссылка назад на главную -->
+        <a href="/" class="back-link">← To Main Page</a>
+    </div>
+
+</body>
+</html>
